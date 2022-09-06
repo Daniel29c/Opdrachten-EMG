@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inleiding Vue 3</title>
+    <!-- Import styles -->
+    <link rel="stylesheet" href="./my.css">
+    <!-- Import Vuejs 3 -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+
+    <!-- div app -->
+
+    <div id="app">
+        <!-- Logo school weergeven -->
+        <div id="logo">
+            <img :src="logo" alt="" srcset="">
+        </div>
+
+
+        <h3>
+            <p v-if="uur < 12 ">Goedemorgen!</p>
+            <p v-else-if="uur >= 12 && uur < 18">Goedemiddag!</p>
+            <p v-else-if="uur >= 18">Goedenavond!</p>
+            <p v-else>Waarde in uur ongeldig!</p>
+        </h3>
+        Het is vandaag {{naamdag}} {{dag}} {{maand}} {{jaar}} <br />
+        Huidige temperatuur: <br />
+        Huidige windsnelheid en richting: <br />
+        Weer indicatie: <br />
+
+    </div>
+    <!-- Import app vanuit main.js (view model) -->
+    <script src="./vue.js"></script>
+    <script>
+        // De app (viewModel in id="app" invoegen)
+        const mountApp = app.mount("#app");
+    </script>
+</body>
+
+
+</html>
